@@ -26,13 +26,13 @@ x_test = X_test.reshape(X_test.shape[0],img_size,img_size,1)
 y_train = to_categorical(y_train, num_classes)
 y_test = to_categorical(y_test,num_classes)
 
-model = ResNet().resnet18()
+model = ResNet().model()
 model.compile(loss='categorical_crossentropy',
               optimizer=Adam(),
               metrics=['accuracy'])
 model.summary()
 
-epochs = 5
+epochs = 2
 batch_size = 100
 
 model.fit(x_train, y_train,
